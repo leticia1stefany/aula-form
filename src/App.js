@@ -1,11 +1,12 @@
 import React from 'react';
+import { Form } from './Form';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Header';
 import { Home } from './Home';
 import { Consult } from './Consult';
 
 function App() {
- 
+
   return (
 
     <BrowserRouter>
@@ -16,7 +17,8 @@ function App() {
         <main className='p-4'>
           <Routes>
             <Route path='/' element={<Home/>} />
-            <Route path='consultar' element={<Consult/>} />
+            <Route path='/consultar' element={<Consult/>} />
+            <Route path='/cadastrar' element={<Form/>} />
           </Routes>
         </main>
         </div>

@@ -15,7 +15,7 @@ export function Consult() {
                     </div>
                     <div>
                         <div className='flex justify-center'>
-                        <Link className="p-2 border border-black bg-sky-500 hover:bg-sky-700 text-white rounded-lg" to="/cadastro">+CADASTRAR</Link>
+                        <Link className="p-2 border border-black bg-sky-500 hover:bg-sky-700 text-white rounded-lg" to="/cadastrar">+CADASTRAR</Link>
         
                         </div>
                     </div>
