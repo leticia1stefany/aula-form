@@ -34,7 +34,7 @@ export function Form() {
                     className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 />
                 {errors.nome && <p className='text-red-600 text-sm'>{errors.nome.message}</p>}
-                <label className='block text-sm font-medium text-gray-700'>Email </label>
+                <label className='block text-sm font-medium text-gray-700'>E-mail </label>
                 <input placeholder='Digite seu email' type='email'
                     {...register("email", { required: "O email é obrigatório", pattern: { value: /^[^\s@]+@[^\s]+\.[^\s]+$/, message: "Email inválido" } })}
                     className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -46,7 +46,7 @@ export function Form() {
                     className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 />
                 {errors.senha && <p className='text-red-600 text-sm'>{errors.senha.message}</p>}
-                <label className='block text-sm font-medium text-gray-700'>Telefone </label>
+                <label className='block text-sm font-medium text-gray-700'>Contato </label>
                 <input placeholder='(XX)99999999' type='tel' //criar uma máscara, ajustar o placeholder
                     {...register("telefone", { required: "O telefone é obrigatório", pattern: { value: /^\(\d{2}\)\d{9}$/, message: "Telefone inválido" } })}
                     className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"

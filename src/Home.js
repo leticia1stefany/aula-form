@@ -15,9 +15,9 @@ export function Home() {
 
     return(
         <div>
-        <h1 className='text 3xl font-medium italic'>Seja bem-vindo. Faça login para iniciar</h1>
+        <h1 className='text 3xl font-medium italic'>Seja bem-vindo(a). Faça login para iniciar</h1>
         
-        <label className='block text-sm font-medium text-gray-700'>Email </label>
+        <label className='block text-sm font-medium text-gray-700'>E-mail </label>
                 <input placeholder='Digite seu email' type='email'
                     {...register("email", { required: "O email é obrigatório", pattern: { value: /^[^\s@]+@[^\s]+\.[^\s]+$/, message: "Email inválido" } })}
                     className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
