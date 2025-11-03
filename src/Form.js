@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import React, {useState} from "react";
 
 export function Form() {
@@ -13,16 +13,30 @@ export function Form() {
     const onSubmit = async () => {
     
         try {
-            const response = await fetch('http://localhost:8080/api/mensagem');
-            if (!response.ok) throw new Error('Erro na requisição');
+            const response = await fetch('http://localhost:8080/api/mensagem', 
+                {
+                    method:"POST",
+                    headers: {'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+        });
+            if (!response.ok) {
+            const mensagemSucesso = await response.text();
+            setMensagem({text: mensagemSucesso});
+            console.log("Resposta do servidor:", mensagemSucesso);
+            reset()
+        }else{
+            const mensagemErro = await response.text();
+            console.error("Erro ao cadastrar");
+        }
+    } catch (error) {
+        console.error('Erro ao procurar mensagem:', error);
+        setMensagem('Erro ao procurar mensagem no servidor.');
 
             const data = await response.json(); //converte a resposta para json
-            setMensagem(data.mensagem); //atualiza o estado com a mensagem recebida
-    } catch (error) {
-            console.error('Erro ao buscar a mensagem:', error);
-            setMensagem('Erro ao buscar a mensagem no servidor.');
-    }
-    }
+            setMensagem(data.mensagem);        //atualiza o estado com a mensagem recebida
+        }
+    };
     return (
         <div>
             <h1 className='text-3xl text-gray-800 mb-4'>Cadastrar usuários</h1>
