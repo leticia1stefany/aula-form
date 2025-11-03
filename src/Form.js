@@ -10,7 +10,11 @@ export function Form() {
         formState: { errors },
         reset } = useForm({ mode: 'onBlur' });
       //Arrow Function
-      const onSubmit = (data) => {
+      const onSubmit = (async function 
+        
+        (params) {
+        data
+      }) => {
     
         fetch("http://localhost:8080")
         .then((response) => response.json())
